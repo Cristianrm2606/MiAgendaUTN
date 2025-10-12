@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\cr204\\Desktop\\Proyecto moviles\\MiAgendaUTN-Cristian, Raul\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{66B393B7-12AE-4BEB-83EC-C428F9527B11}|MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj|c:\\users\\cr204\\desktop\\proyecto moviles\\miagendautn-cristian, raul\\miagendautn-cristian, raul\\miagendautn-cristian, raul.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66B393B7-12AE-4BEB-83EC-C428F9527B11}|MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj|solutionrelative:miagendautn-cristian, raul\\miagendautn-cristian, raul.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66B393B7-12AE-4BEB-83EC-C428F9527B11}|MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj|c:\\users\\cr204\\desktop\\proyecto moviles\\miagendautn-cristian, raul\\miagendautn-cristian, raul\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{66B393B7-12AE-4BEB-83EC-C428F9527B11}|MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj|solutionrelative:miagendautn-cristian, raul\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MiAgendaUTN-Cristian, Raul",
+              "DocumentMoniker": "C:\\Users\\cr204\\Desktop\\Proyecto moviles\\MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj",
+              "RelativeDocumentMoniker": "MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj",
+              "ToolTip": "C:\\Users\\cr204\\Desktop\\Proyecto moviles\\MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj",
+              "RelativeToolTip": "MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-12T01:39:46.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\cr204\\Desktop\\Proyecto moviles\\MiAgendaUTN-Cristian, Raul\\MiAgendaUTN-Cristian, Raul\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "MiAgendaUTN-Cristian, Raul\\Components\\Pages\\Home.razor",

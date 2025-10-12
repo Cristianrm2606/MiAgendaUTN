@@ -11,10 +11,14 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Reflection.AssemblyMetadataAttribute("Microsoft.Maui.ApplicationModel.AppInfo.PackageName", "com.companyname.miagendautncristianraul")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("Microsoft.Maui.ApplicationModel.AppInfo.PublisherName", "User Name")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("Microsoft.Maui.ApplicationModel.AppInfo.Name", "MiAgendaUTN-Cristian, Raul")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("Microsoft.Maui.ApplicationModel.AppInfo.Version", "1.0.0.1")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAgendaUTN-Cristian, Raul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d32b863587886dd3b9267168b052b2ca80337d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8a81664f2d4a527793cc7c3392941bd8cc6b9a1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAgendaUTN-Cristian, Raul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAgendaUTN-Cristian, Raul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
