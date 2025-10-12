@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Hosting;
+using MiAgendaUTN_Cristian__Raul.Services;
+using MiAgendaUTN_Cristian__Raul.Components;
 
 namespace MiAgendaUTN_Cristian__Raul
 {
@@ -14,11 +17,12 @@ namespace MiAgendaUTN_Cristian__Raul
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddBlazorWebView();
+            builder.Services.AddSingleton<IDataStore, SqliteDataStore>();
+            builder.Services.AddSingleton<TareaViewModel>();
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
