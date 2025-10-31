@@ -1,0 +1,168 @@
+﻿@page "/"
+@using MiAgendaUTN.ViewModels
+@using MiAgendaUTN.Models
+@inject TareaViewModel ViewModel
+
+<div class="container mt-5">
+    <h1 class="mb-4">Mi Agenda UTN</h1>
+
+    
+    @if (!string.IsNullOrEmpty(ViewModel.MensajeError))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @ViewModel.MensajeError
+            <button type="button" class="btn-close" @onclick="() => ViewModel.MensajeError = string.Empty"></button>
+        </div>
+    }
+
+    
+    @if (ViewModel.IsLoading)
+    {
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+    }
+
+    
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5>Crear Nueva Tarea</h5>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título *</label>
+                <input type="text" class="form-control" id="titulo"
+                       @bind="ViewModel.Titulo"
+                       placeholder="Ingresa el título de la tarea" />
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3"
+                          @bind="ViewModel.Descripcion"
+                          placeholder="Ingresa detalles de la tarea"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="fecha" class="form-label">Fecha de Vencimiento *</label>
+                    <input type="date" class="form-control" id="fecha"
+                           @bind="ViewModel.FechaVencimiento" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="categoria" class="form-label">Categoría</label>
+                    <select class="form-control" id="categoria" @bind="ViewModel.Categoria">
+                        <option value="General">General</option>
+                        <option value="Trabajo">Trabajo</option>
+                        <option value="Estudio">Estudio</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Urgente">Urgente</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-success" @onclick="() => ViewModel.CrearTareaCommand.Execute(null)">
+                ➕ Crear Tarea
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5>Filtros</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="filtroEstado" class="form-label">Estado</label>
+                    <select class="form-control" id="filtroEstado" @bind="ViewModel.FiltroEstado">
+                        <option value="todas">Todas</option>
+                        <option value="pendientes">Pendientes</option>
+                        <option value="completadas">Completadas</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="filtroCategoria" class="form-label">Categoría</label>
+                    <select class="form-control" id="filtroCategoria" @bind="ViewModel.FiltroCategoria">
+                        <option value="todas">Todas</option>
+                        <option value="General">General</option>
+                        <option value="Trabajo">Trabajo</option>
+                        <option value="Estudio">Estudio</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Urgente">Urgente</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" @onclick="() => ViewModel.AplicarFiltrosCommand.Execute(null)">
+                  Filtrar
+            </button>
+            <button class="btn btn-secondary" @onclick="() => ViewModel.CargarTareasCommand.Execute(null)">
+                 Ver Todas
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <h5>Lista de Tareas (@ViewModel.Tareas.Count)</h5>
+        </div>
+        <div class="card-body">
+            @if (ViewModel.Tareas.Count == 0)
+            {
+                <p class="text-muted">No hay tareas puede crear una </p>
+            }
+            else
+            {
+                <div class="list-group">
+                    @foreach (var tarea in ViewModel.Tareas)
+                    {
+                        <div class="list-group-item @(tarea.Completada ? "list-group-item-success" : "")">
+                            <div class="row align-items-center">
+                                <div class="col-md-1">
+                                    <input type="checkbox" class="form-check-input"
+                                           @onchange="@((ChangeEventArgs e) => ViewModel.MarcarCompletadaCommand.Execute(tarea))"
+                                           checked="@tarea.Completada" />
+                                </div>
+                                <div class="col-md-7">
+                                    <h6 class="@(tarea.Completada ? "text-decoration-line-through" : "")">
+                                        @tarea.Titulo
+                                    </h6>
+                                    @if (!string.IsNullOrEmpty(tarea.Descripcion))
+                                    {
+                                        <p class="text-muted small">@tarea.Descripcion</p>
+                                    }
+                                    <small>
+                                        <span class="badge bg-secondary">@tarea.Categoria</span>
+                                        <span class="ms-2"> @tarea.FechaVencimiento:dd/MM/yyyy</span>
+                                    </small>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <button class="btn btn-sm btn-warning me-2" title="Editar">
+                                         Editar
+                                    </button>
+                                    <button class="btn btn-sm btn-danger"
+                                            @onclick="() => ViewModel.EliminarTareaCommand.Execute(tarea)"
+                                            title="Eliminar">
+                                         Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.CargarTareasCommand.ExecuteAsync(null);
+    }
+}
