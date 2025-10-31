@@ -1,0 +1,9 @@
+bin/
+   obj/
+   .vs/
+   .vscode/
+   *.apk
+   *.db3
+   MiAgendaUTN.db3
+   node_modules/
+   dist/
